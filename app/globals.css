@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background: #f4f8f6; color: #1b1b18; overflow-x: hidden; max-width: 100%; }
+body { font-family: var(--font-inter), system-ui, sans-serif; font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.font-mono { font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.maplibregl-ctrl-group { border-radius: 2px !important; }
+::selection { background: #B45309; color: #fff; }
+input[type=range] { height: 4px; }
+
+
+
+/* dual-handle range (atlas sidebar) */
+.dual-range { position: relative; height: 22px; }
+.dual-range input[type=range] { position: absolute; inset: 0; width: 100%; height: 22px; margin: 0; background: transparent; pointer-events: none; -webkit-appearance: none; appearance: none; }
+.dual-range input[type=range]::-webkit-slider-runnable-track { background: transparent; height: 22px; }
+.dual-range input[type=range]::-moz-range-track { background: transparent; }
+.dual-range input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: auto; width: 18px; height: 18px; margin-top: 2px; border-radius: 9999px; background: #fff; border: 2px solid #1b7a45; box-shadow: 0 1px 4px rgba(6,40,29,.35); cursor: grab; }
+.dual-range input[type=range]::-moz-range-thumb { pointer-events: auto; width: 14px; height: 14px; border-radius: 9999px; background: #fff; border: 2px solid #1b7a45; box-shadow: 0 1px 4px rgba(6,40,29,.35); cursor: grab; }
+.dual-range input[type=range]:active::-webkit-slider-thumb { cursor: grabbing; transform: scale(1.12); }
+
+/* split-year slider: track is coloured A | B, big round thumb */
+.split-range { -webkit-appearance: none; appearance: none; height: 10px !important; border-radius: 9999px; outline: none; cursor: pointer; }
+.split-range::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 9999px; background: #fff; border: 3px solid #0F172A; box-shadow: 0 2px 6px rgba(15,23,42,.35); cursor: grab; transition: transform .12s; }
+.split-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 9999px; background: #fff; border: 3px solid #0F172A; box-shadow: 0 2px 6px rgba(15,23,42,.35); cursor: grab; }
+.split-range:active::-webkit-slider-thumb { transform: scale(1.15); cursor: grabbing; }
+.split-range:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 5px rgba(15,23,42,.18); }
